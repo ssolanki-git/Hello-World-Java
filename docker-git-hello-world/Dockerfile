@@ -32,7 +32,11 @@ RUN apt-get update && apt-get install -y default-jdk maven
 
 # ADD a directory called docker-git-hello-world inside the UBUNTU IMAGE where you will be moving all of these files under this 
 # DIRECTORY to
+RUN echo $(ls  .)
+
 ADD . /usr/local/docker-git-hello-world
+
+RUN echo $(ls  /usr/local/docker-git-hello-world)
 
 # AFTER YOU HAVE MOVED ALL THE FILES GO AHEAD CD into the directory and run mvn assembly.
 # Maven assembly will package the project into a JAR FILE which can be executed
